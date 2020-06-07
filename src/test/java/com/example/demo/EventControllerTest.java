@@ -23,14 +23,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest
-public class SampleControllerTest {
+public class EventControllerTest {
 
     @Autowired
     MockMvc mockMvc;
 
     @Test
     public void getEvent() throws Exception {
-        ResultActions result = mockMvc.perform(post("/events")
+        ResultActions result = mockMvc.perform(post("/events/list")
                     .param("name","hanum")
                     .param("limit","-10"))
                 .andDo(print())
